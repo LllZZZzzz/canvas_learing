@@ -1,0 +1,29 @@
+1.获取canvas对象
+var dom = document.getElementById("clock");
+var ctx = dom.getContext('2d');
+2.获得画布的宽和高
+ var width = dom.width;
+ var height = dom.height;
+3.如果需要更改画布，则先将画布进行保存
+ ctx.save();
+恢复到原来的画布
+ ctx.restore();
+4.画一条线
+ctx.lineWidth = 10;
+ctx.strokeStyle="red";
+ctx.lineCap="round";
+ctx.moveTo(0, 10);
+ctx.lineTo(0, 30);
+ctx.stroke();
+5.画一个圆
+    ctx.beginPath();
+    ctx.arc(0, 0, r, 0, 2 * Math.PI, true);
+    ctx.closePath();
+    ctx.stroke();
+6.变化零点位置
+    ctx.translate(r, r);
+7.画任意图形用直线连接
+8.创建新的旋转后的画布，并进行新的绘制
+    ctx.save();
+    ctx.rotate(rad);
+    ctx.restore();
